@@ -1,0 +1,45 @@
+<section class="account">
+
+    <div *ngIf="!onEditMode" fxLayoutGap="10px" fxLayout="column" fxLayoutAlign="center center">
+        <mat-form-field>
+            <label>Email:</label>
+            <input value="{{user.email}}" matInput readonly>
+        </mat-form-field>
+        <mat-form-field>
+            <label>UserID:</label>
+            <input value="{{user.userId}}" matInput readonly>
+        </mat-form-field>
+        <mat-form-field>
+            <label>Birthdate:</label>
+            <input value="{{user.birthdate}}" matInput readonly>
+        </mat-form-field>
+        <mat-form-field>
+            <label>Gender:</label>
+            <input value="{{user.gender}}" matInput readonly>
+        </mat-form-field>
+        <button mat-raised-button type="button" color="primary" (click)="onEdit()">Edit</button>
+    </div>
+
+    <form *ngIf="onEditMode" fxLayoutGap="10px" fxLayout="column" fxLayoutAlign="center center">
+        <mat-form-field>
+            <input type="email" matInput placeholder="Your email" ngModel name="email" required email #email="ngModel" value="{{user.email}}">
+            <mat-error *ngIf="!email.hasError('required')">email is invalid</mat-error>
+            <mat-error *ngIf="email.hasError('required')">Field should not be empty</mat-error>
+        </mat-form-field>
+        <mat-form-field hintLabel="Should be at least 6 charactes">
+            <input type="password" matInput placeholder="Your password" ngModel name="password"  required minlength="6" #pw="ngModel" value="{{user.userId}}">
+            <mat-hint align="end">{{ pw.value?.length }} / 6</mat-hint>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput [matDatepicker]="picker" placeholder="Your birthdate" ngModel name="birthdate" required value="{{user.birthdate}}">
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+            <mat-radio-group required ngModel name="gender">
+                <mat-radio-button value="male" [checked]="">Male</mat-radio-button>
+                <mat-radio-button value="female">Female</mat-radio-button>
+            </mat-radio-group>
+        <button mat-raised-button type="button" color="primary" (click)="onEdit()">Edit</button>
+    </form>
+
+</section>

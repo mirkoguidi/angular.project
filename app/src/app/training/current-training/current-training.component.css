@@ -1,0 +1,11 @@
+.current-training{
+    padding: 30px;
+}
+
+.bar{
+    padding-top: 30px;
+}
+
+.demo-section + .demo-section {
+    margin-top: 16px;
+  }

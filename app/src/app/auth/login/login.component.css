@@ -1,0 +1,9 @@
+.login{
+    padding: 30px;
+}
+mat-form-field{
+    width: 300px;
+}
+.mat-spinner-color::ng-deep circle{
+    stroke: green !important;
+}
