@@ -1,1 +1,1 @@
-"modifica main" 
+ECHO attivo.
