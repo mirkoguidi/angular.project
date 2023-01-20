@@ -1,2 +1,6 @@
+<<<<<<< HEAD
 "modifica main" 
 "content to append" 
+=======
+ECHO attivo.
+>>>>>>> ramotest
