@@ -33,4 +33,4 @@ import { AccountComponent } from './account/account.component';
   bootstrap: [AppComponent],
   entryComponents: [StopTrainingComponent]
 })
-export class AppModule { } prova
+export class AppModule { }
